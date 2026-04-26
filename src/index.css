@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Aura Projection — Tactile Ceramic Wealth (Dark Edition)
+  Warm earth-tone accents (terracotta + ochre) on a deep charcoal base.
+  Display: Fraunces (serif). Body: Outfit (sans).
+  All colors are HSL.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..600&family=Outfit:wght@300..600&display=swap');
+
+@layer base {
+  :root {
+    /* Core surfaces — deep charcoal, not pure black, for warmth */
+    --background: 24 10% 6%;
+    --foreground: 36 30% 92%;
+
+    --card: 24 8% 9%;
+    --card-foreground: 36 30% 92%;
+
+    --popover: 24 8% 9%;
+    --popover-foreground: 36 30% 92%;
+
+    /* Primary = terracotta (the brand action color) */
+    --primary: 14 55% 53%;
+    --primary-foreground: 24 10% 6%;
+
+    /* Secondary = warm dark clay */
+    --secondary: 24 8% 14%;
+    --secondary-foreground: 36 25% 88%;
+
+    --muted: 24 6% 12%;
+    --muted-foreground: 36 12% 62%;
+
+    /* Accent = ochre (returns / success) */
+    --accent: 36 65% 58%;
+    --accent-foreground: 24 10% 6%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 36 30% 92%;
+
+    --border: 24 8% 16%;
+    --input: 24 8% 16%;
+    --ring: 14 55% 53%;
+
+    --radius: 1.25rem;
+
+    /* Bespoke earth palette tokens */
+    --clay-deep: 24 10% 6%;
+    --clay-raised: 24 8% 11%;
+    --clay-edge: 24 8% 16%;
+    --terra: 14 55% 53%;
+    --terra-dim: 14 45% 38%;
+    --ochre: 36 65% 58%;
+    --bone: 36 30% 92%;
+    --bone-muted: 36 14% 70%;
+
+    /* Gradients & shadows */
+    --gradient-warmth: radial-gradient(120% 80% at 80% 0%, hsl(14 55% 53% / 0.18), transparent 60%);
+    --gradient-vault: linear-gradient(155deg, hsl(24 8% 11%) 0%, hsl(24 10% 5%) 100%);
+    --gradient-ember: linear-gradient(135deg, hsl(14 55% 53%), hsl(36 65% 58%));
+    --shadow-pillar: 0 24px 48px -16px hsl(0 0% 0% / 0.6), 0 1px 0 hsl(36 30% 92% / 0.04) inset;
+    --shadow-pressed: inset 0 2px 6px hsl(0 0% 0% / 0.5);
+    --shadow-coin: 0 6px 14px hsl(0 0% 0% / 0.55), 0 0 0 1px hsl(36 30% 92% / 0.06);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Outfit', system-ui, sans-serif;
+    background-image: var(--gradient-warmth);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: 'ss01';
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .bg-vault { background: var(--gradient-vault); }
+  .bg-ember { background: var(--gradient-ember); }
+  .shadow-pillar { box-shadow: var(--shadow-pillar); }
+  .shadow-pressed { box-shadow: var(--shadow-pressed); }
+  .shadow-coin { box-shadow: var(--shadow-coin); }
+  .text-tabular { font-variant-numeric: tabular-nums; }
+}
